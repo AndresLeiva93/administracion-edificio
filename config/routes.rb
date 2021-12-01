@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get "buildings/index"
-  get "apartaments/index"
-
-  root to: "buildings#index"
+  get "building/index"
+  get "apartament/index"
+  get "building/new"
+  post "building/create"
+  root to: "building#index"
   
 end
