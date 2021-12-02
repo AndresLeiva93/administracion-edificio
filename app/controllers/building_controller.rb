@@ -5,6 +5,7 @@ class BuildingController < ApplicationController
     def new
     end
     def show
+      @building = Building.find(params[:id])
     end
     def create
       params.permit!
