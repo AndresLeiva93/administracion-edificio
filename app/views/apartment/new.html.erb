@@ -1,0 +1,17 @@
+<%= form_for :apartment, :url => {:action => :create} do |f| %>
+    <div class="field">
+      <%= f.label :number %>
+      <%= f.text_field :number %>
+    </div>
+    <div class="field">
+      <%= f.label :building %>
+      <%= f.select :building_id, @buildings.map {|building|
+      [building.name, building.id] }, prompt: "Seleccione una opción..." %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+  <%= link_to "volver", apartment_index_path %>
+  

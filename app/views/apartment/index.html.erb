@@ -1,0 +1,20 @@
+<h1>Apartments</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Building</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @apartments.each do |apartment| %>
+      <tr>
+        <td><%= apartment.number %></td>
+        <td><%= apartment.building %></td>
+        <td><%= link_to "Show", :action => :show, :id => apartment.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Apartment", apartment_new_path %>

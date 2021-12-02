@@ -1,7 +1,7 @@
 class CreateApartments < ActiveRecord::Migration[6.1]
   def change
     create_table :apartments do |t|
-      t.integer :numero
+      t.integer :number
       t.references :building, null: false, foreign_key: true
 
       t.timestamps
