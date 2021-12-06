@@ -1,5 +1,12 @@
-Number:
-<%= @apartment.number %>
-Building:
-<%= @apartment.building.name %>
-<%= link_to "volver", apartment_index_path %>
+<div class="container text-center">
+<br/>
+    <p>Number:</p>
+    <%= @apartment.number %>
+    <br/>
+    <br/>
+    <p>Building:</p>
+    <%= @apartment.building.name %>
+    <br/>
+    <br/>
+    <%= link_to "volver", apartment_index_path %>
+</div>

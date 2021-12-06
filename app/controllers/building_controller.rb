@@ -6,6 +6,7 @@ class BuildingController < ApplicationController
     end
     def show
       @building = Building.find(params[:id])
+      @apartments = Apartment.where(building_id: @building.id)
     end
     def create
       params.permit!

@@ -1,23 +1,27 @@
 <h1>New Building</h1>
 
-<%= form_for :building, :url => {:action => :create} do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class='container text-center' style="max-width: 800px">
+  <div class="text-center">
+    <%= form_for :building, :url => {:action => :create} do |f| %>
+      <div class="field">
+        <%= f.label :name, class:"form-label" %>
+        <%= f.text_field :name , style: 'width:100%', class:"form-control", placeholder:"Name Building"%>
+      </div>
+      <div class="field">
+        <%= f.label :address, class:"form-label" %>
+        <%= f.text_field :address , style: 'width:100%', class:"form-control", placeholder:"Address Building"%>
+      </div>
+      <div class="field">
+        <%= f.label :city, class:"form-label" %>
+        <%= f.text_field :city , style: 'width:100%', class:"form-control", placeholder:"City Building" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Registrar", class:"btn btn-dark rounded-pill border-1 mt-5" ,style:'width:100%;height:40px'   %>
+      </div>
+    <% end %>
 
-<%= link_to "volver", building_index_path %>
+    <%= link_to "volver", building_index_path, class:"btn btn-dark rounded-pill border-1 mt-3" ,style:'width:100%;height:40px' %>
+  </div>
+</div>
 
   

@@ -1,17 +1,23 @@
-<%= form_for :apartment, :url => {:action => :create} do |f| %>
-    <div class="field">
-      <%= f.label :number %>
-      <%= f.text_field :number %>
-    </div>
-    <div class="field">
-      <%= f.label :building %>
-      <%= f.select :building_id, @buildings.map {|building|
-      [building.name, building.id] }, prompt: "Seleccione una opción..." %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
 
-  <%= link_to "volver", apartment_index_path %>
-  
+
+<div class='container text-center' style="max-width: 800px">
+  <h1>New Aparment</h1>
+  <div class="text-center">
+    <%= form_for :apartment, :url => {:action => :create} do |f|  %>
+      <div class="field mb-3">
+        <%= f.label :number, class:"form-label" %>
+        <%= f.text_field :number , style: 'width:100%', class:"form-control"%>
+      </div>
+      <div class="field" style="width:100%" >
+        <%= f.label :building, class:"form-label" %>
+        <%= f.select :building_id, @buildings.map {|building|
+        [building.name, building.id] }, prompt: "Seleccione una opción...", style: 'width:100%'%>
+      </div>
+      <div class="actions">
+        <%= f.submit "Registrar", class:"btn btn-dark rounded-pill border-1 mt-5" ,style:'width:100%;height:40px'%>
+      </div>
+    <% end %>
+
+    <%= link_to "volver", apartment_index_path, class:"btn btn-dark rounded-pill border-1 mt-3" ,style:'width:100%;height:40px'  %>
+  </div>    
+</div>  

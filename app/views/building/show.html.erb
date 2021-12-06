@@ -1,10 +1,42 @@
-<h1>Building</h1>
-<p>Name:</p>
-<%= @building.name %>
-<p>Address:</p>
-<%= @building.address %>
-<p>City:</p>
-<%= @building.city %>
-<h1>Apartments</h1>
+<div class="text-center">
+    <div class="container text-left" style="max-width: 800px">
+    
+        <h1>Building</h1>
+        <div class="d-flex">
+            <p>Name:</p>
+            <%= @building.name %>
+        </div>
+        <div class="d-flex">
+            <p>Address:</p>
+            <%= @building.address %>
+        </div>
+        <div class="d-flex">
+            <p>City:</p>
+            <%= @building.city %>
+        </div>        
+        <br/>
+        <hr>
+        <br/>
 
-<%= link_to "volver", building_index_path %>
+        <h1>Apartments</h1>
+
+        <table class="table">
+        <thead>
+            <tr>
+            <th>Number</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @apartments.each do |apartment| %>
+            <tr>
+                <td><%= apartment.number %></td>
+                <td><%= link_to "Show", :controller=> :apartment, :action => :show, :id => apartment.id %></td>
+            </tr>
+            <% end %>
+        </tbody>
+        </table>
+
+        <%= link_to "volver", building_index_path %>
+    </div>
+</div>
